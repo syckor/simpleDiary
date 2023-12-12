@@ -17,6 +17,11 @@ const DiaryEditor = () => {
         });
     }
 
+    const handleSubmit = () => {
+        console.log(state);
+        alert("saved");
+    }
+
     return (
         <div className="DiaryEditor">
             <h2>오늘의 일기</h2>
@@ -42,6 +47,9 @@ const DiaryEditor = () => {
                     <option value={4}>4</option>
                     <option value={5}>5</option>
                 </select>
+            </div>
+            <div>
+                <button onClick={handleSubmit}>일기 저장하기</button>
             </div>
         </div>
     );
