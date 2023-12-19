@@ -3,8 +3,8 @@ import React, {useEffect, useState} from 'react';
 const UnmountTest = () => {
     useEffect(()=>{
         console.log("Mount!");
-
         return () => {
+            //unmount시점에 실행
             console.log("UnMount!");
         }
     }, []);
