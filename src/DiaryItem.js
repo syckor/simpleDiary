@@ -1,4 +1,4 @@
-const DiaryItem = ({onDelete, author, content, created_date, emotion, id}) => {
+const DiaryItem = ({onRemove, author, content, created_date, emotion, id}) => {
     return <div className="DiaryItem">
         <div className="info">
             <span>
@@ -11,7 +11,7 @@ const DiaryItem = ({onDelete, author, content, created_date, emotion, id}) => {
         <button onClick={() => {
             console.log(id);
             if(window.confirm(`${id}번째 일기를 정말 취소하겠습니까?`)){
-                onDelete(id);
+                onRemove(id);
             }
         }}>삭제하기</button>
     </div>;
