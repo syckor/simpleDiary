@@ -23,11 +23,19 @@ function App() {
     console.log(`${targetId}가 삭제되었습니다.`)
     setData([...data.filter(x => x.id !== targetId)])
   }
+
+  const onEdit = (targetId, newContent) => {
+    setData(
+      data.map((it) => 
+        it.id === targetId ? {...it, content:newContent} : it
+      )
+    );
+  };
   return (
     <div className="App">
       <header className="App-header">
         <DiaryEditor onCreate={onCreate}/>
-        <DiaryList onRemove={onRemove} diaryList={data} />
+        <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
       </header>
     </div>
   );
